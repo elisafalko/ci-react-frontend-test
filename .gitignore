@@ -1,0 +1,47 @@
+# --------------------
+# OS / Editor
+# --------------------
+.DS_Store
+.vscode/
+.idea/
+
+# --------------------
+# Environment files
+# --------------------
+.env
+.env.*
+env
+
+# --------------------
+# CodeIgniter
+# --------------------
+ci/writable/*
+!ci/writable/.htaccess
+
+writable/
+
+ci/public/assets/*
+!ci/public/assets/.gitkeep
+
+# --------------------
+# Vendor
+# --------------------
+vendor/
+
+# --------------------
+# Docker
+# --------------------
+docker-data/
+*.log
+
+# --------------------
+# Node / React (future)
+# --------------------
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# --------------------
+# Tests / cache
+# --------------------
+coverage/
