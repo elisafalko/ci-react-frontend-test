@@ -6,6 +6,11 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('home');
+        $items = [
+            'apiUrl' => '/api/items'
+        ];
+
+        return view('home', $items);
     }
 }
+
