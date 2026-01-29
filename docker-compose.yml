@@ -8,3 +8,10 @@ services:
       - "8080:80"
     volumes:
       - ./:/var/www/html
+
+  frontend:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+      - ./ci/public/assets:/output
