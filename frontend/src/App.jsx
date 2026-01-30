@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 // import IronPdf from "./components/IronPdf/IronPdf";
-// import WhyChoose from "./components/WhyChoose/WhyChoose";
+import WhyChoose from "./components/WhyChoose/WhyChoose";
 // import EarlyAccess from "./components/EarlyAccess/EarlyAccess";
 import Footer from "./components/Footer/Footer";
 
@@ -38,7 +38,7 @@ export default function App() {
       <Header />
       <Hero />
       {/* <IronPdf /> */}
-      {/* <WhyChoose /> */}
+      <WhyChoose />
       {/* <EarlyAccess /> */}
       <Footer />
       <div className="container py-4">

@@ -4,13 +4,19 @@ import { headerLogo } from "@/assets";
 export default function Header() {
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
+      <div className={styles.header__logo}>
         <img src={headerLogo} alt="" />
       </div>
-      <nav className={styles.nav}>
-        <a href="#">Products</a>
-        <a href="#">About</a>
-        <a href="#">Careers</a>
+      <nav className={styles.header__nav}>
+        <a className={styles.header__link} href="#">
+          Products
+        </a>
+        <a className={styles.header__link} href="#">
+          About us
+        </a>
+        <a className={styles.header__link} href="#">
+          Careers
+        </a>
       </nav>
     </header>
   );
