@@ -6,7 +6,7 @@
     <p class="text-muted">
         Data source: <code><?= esc($apiUrl) ?></code>
     </p>
-    <div id="react-root"></div>
+    <div id="root"></div>
 </main>
 
 <?= $this->endSection() ?>

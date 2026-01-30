@@ -1,0 +1,16 @@
+@use "@/styles/variables" as *;
+
+.header {
+  display: flex;
+  padding: 24px 48px;
+  align-items: center;
+  justify-content: space-between;
+  background: $color-bg-lilac-primary;
+  font-family: $font-gotham-bold;
+}
+
+.nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: white;
+}
