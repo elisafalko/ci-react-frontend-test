@@ -1,19 +1,24 @@
 @use "@/styles/variables" as *;
 
 .whychoose {
-  gap: 52px;
-  display: flex;
-  color: $color-white;
-  align-items: center;
-  justify-content: flex-start;
   background: $color-bg-lilac-medium;
 
-  &__image {
-    min-width: 270px;
-    min-height: 179px;
+  &__container {
+    gap: 52px;
+    display: flex;
+    padding: 112px 0;
+    color: $color-white;
+    align-items: center;
+    justify-content: flex-start;
   }
 
-  &__text {
-    color: $color-lilac-light;
+  &__image {
+    width: 270px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   }
 }

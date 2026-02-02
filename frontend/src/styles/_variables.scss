@@ -1,4 +1,4 @@
-@use "./fonts";
+@use "@/styles/fonts" as *;
 
 // colors
 $color-white: #ffffff;
@@ -43,14 +43,15 @@ $font-mono: "JetBrains Mono", monospace;
 $font-size-xs: 12px;
 $font-size-sm: 14px;
 $font-size-md: 16px;
-$font-size-lg: 20px;
+$font-size-lg: 18px;
 $font-size-xl: 24px;
-$font-size-2xl: 32px;
+$font-size-2xl: 40px;
+$font-size-3xl: 50px;
 
 // font-weights
-$font-weight-regular: 400;
-$font-weight-medium: 500;
-$font-weight-bold: 700;
+$font-weight-regular: 300;
+$font-weight-medium: 700;
+$font-weight-bold: 900;
 
 // layout
-$container-width: 1600px;
+$container-width: 1170px;

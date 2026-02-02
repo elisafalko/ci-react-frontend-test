@@ -1,4 +1,5 @@
 import styles from "./Footer.module.scss";
+import SignupForm from "../SignupForm/SignupForm";
 
 export default function Footer() {
   return (
@@ -6,14 +7,7 @@ export default function Footer() {
       <h2 className={styles.footer__heading}>
         Sign up to our <span className={styles.footer__text}>Beta Program</span>
       </h2>
-      <form className={styles.footer__form}>
-        <input
-          type="email"
-          placeholder="Enter email address"
-          className={styles.footer__input}
-        />
-        <button className={styles.footer__button}>Sign up now</button>
-      </form>
+      <SignupForm onSubmit={() => console.log("Footer")} />
     </footer>
   );
 }

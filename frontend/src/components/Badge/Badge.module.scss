@@ -1,0 +1,28 @@
+@use "@/styles/variables" as *;
+
+.badge {
+  width: 146px;
+  height: 32px;
+  line-height: 28px;
+  padding: 2px 18px;
+  text-align: center;
+  border-radius: 126px;
+  font-family: $font-gotham;
+  font-size: $font-size-sm;
+
+  &--coming-soon {
+    color: $color-lilac-medium;
+    background: $color-lilac-light;
+  }
+
+  &--released {
+    color: $color-violet;
+    font-weight: $font-weight-medium;
+    background: $color-lilac-light;
+  }
+
+  &--coming-soon-v2 {
+    color: $color-lilac-light;
+    background: $color-violet;
+  }
+}

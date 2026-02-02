@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 
-import Header from "@/components/Header/Header";
+import Layout from "@/components/Layout/Layout";
 import Hero from "@/components/Hero/Hero";
 // import IronPdf from "./components/IronPdf/IronPdf";
-import WhyChoose from "./components/WhyChoose/WhyChoose";
+import WhyChoose from "@/components/WhyChoose/WhyChoose";
 // import EarlyAccess from "./components/EarlyAccess/EarlyAccess";
-import Footer from "./components/Footer/Footer";
 
 export default function App() {
   const [items, setItems] = useState([]);
@@ -34,13 +33,11 @@ export default function App() {
   if (error) return <p className="text-danger">Error: {error}</p>;
 
   return (
-    <>
-      <Header />
+    <Layout>
       <Hero />
       {/* <IronPdf /> */}
       <WhyChoose />
       {/* <EarlyAccess /> */}
-      <Footer />
       <div className="container py-4">
         <h1>Frontend Test Task</h1>
         <p className="text-muted">Data source: /api/items</p>
@@ -54,6 +51,6 @@ export default function App() {
           ))}
         </ul>
       </div>
-    </>
+    </Layout>
   );
 }
