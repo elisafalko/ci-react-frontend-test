@@ -4,7 +4,7 @@ import Layout from "@/components/Layout/Layout";
 import Hero from "@/components/Hero/Hero";
 // import IronPdf from "./components/IronPdf/IronPdf";
 import WhyChoose from "@/components/WhyChoose/WhyChoose";
-// import EarlyAccess from "./components/EarlyAccess/EarlyAccess";
+import EarlyAccess from "./components/EarlyAccess/EarlyAccess";
 
 export default function App() {
   const [items, setItems] = useState([]);
@@ -37,7 +37,7 @@ export default function App() {
       <Hero />
       {/* <IronPdf /> */}
       <WhyChoose />
-      {/* <EarlyAccess /> */}
+      <EarlyAccess />
       <div className="container py-4">
         <h1>Frontend Test Task</h1>
         <p className="text-muted">Data source: /api/items</p>

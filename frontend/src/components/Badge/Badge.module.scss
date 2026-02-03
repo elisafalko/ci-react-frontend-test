@@ -1,14 +1,19 @@
 @use "@/styles/variables" as *;
 
 .badge {
-  width: 146px;
   height: 32px;
+  display: flex;
+  min-width: 146px;
   line-height: 28px;
   padding: 2px 18px;
   text-align: center;
+  color: $color-black;
   border-radius: 126px;
-  font-family: $font-gotham;
+  align-items: center;
+  justify-content: center;
   font-size: $font-size-sm;
+  font-family: $font-gotham;
+  background: $color-lilac-light;
 
   &--coming-soon {
     color: $color-lilac-medium;
