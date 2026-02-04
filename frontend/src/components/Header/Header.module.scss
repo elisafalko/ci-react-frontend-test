@@ -1,12 +1,24 @@
 @use "@/styles/variables" as *;
+@use "@/styles/globals" as *;
 
 .header {
-  padding: 14px;
+  z-index: 1;
   display: flex;
+  position: relative;
   align-items: center;
+  padding: 14px 14px 0;
   justify-content: flex-start;
   background: $color-bg-lilac-primary;
   font-family: $font-gotham-bold;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-xs;
+
+  &__nav {
+    display: flex;
+    margin-left: 25px;
+    align-items: center;
+    text-transform: uppercase;
+  }
 
   &__logo {
     min-width: 115px;
@@ -15,7 +27,8 @@
 
   &__link {
     margin-left: 24px;
+    color: $color-white;
     text-decoration: none;
-    color: white;
+    font-weight: $font-weight-medium;
   }
 }

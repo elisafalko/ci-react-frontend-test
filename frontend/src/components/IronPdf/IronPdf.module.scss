@@ -7,8 +7,7 @@
     color: $color-white;
     text-align: center;
     padding: 94px 0 50px;
-    background: url("@/assets/icons/ironPdfBlur2.svg") left bottom / contain
-        no-repeat,
+    background: url("@/assets/icons/ironPdfBlur2.svg") left bottom / contain no-repeat,
       $color-bg-lilac-primary;
   }
 
@@ -27,12 +26,22 @@
   }
 
   &__list {
-    gap: 53px;
+    gap: 48px;
     padding: 0;
     display: flex;
     margin: 50px 0 0;
     list-style-type: none;
     justify-content: space-between;
+  }
+
+  &__item {
+    padding-right: 54px;
+    background: url("@/assets/icons/ironDivider.svg") right no-repeat;
+
+    &:last-child {
+      padding-right: 0;
+      background: none;
+    }
   }
 
   &__text {

@@ -1,6 +1,10 @@
+@use "@/styles/breakpoints" as *;
+
 .layout {
   display: flex;
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
   flex-direction: column;
 
   &__main {
@@ -10,5 +14,40 @@
 
   &__container {
     margin: 0 auto;
+  }
+
+  &__decor {
+    z-index: 1;
+    top: -2px;
+    right: 35%;
+    display: inline-block;
+    pointer-events: none;
+    position: absolute;
+    width: 804px;
+    height: auto;
+
+    @media (max-width: $bp-5xl) {
+      right: 30%;
+    }
+
+    @media (max-width: $bp-4xl) {
+      right: 20%;
+    }
+
+    @media (max-width: $bp-3xl) {
+      right: 10%;
+    }
+
+    @media (max-width: $bp-2xl) {
+      right: 0;
+    }
+
+    @media (max-width: $bp-xl) {
+      width: 740px;
+    }
+
+    @media (max-width: $bp-lg) {
+      display: none;
+    }
   }
 }

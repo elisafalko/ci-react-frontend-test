@@ -58,15 +58,6 @@
     background: $color-bg-azalea;
     font-family: $font-gotham-bold;
     font-weight: $font-weight-medium;
-
-    &::after {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-top: 2px solid $color-white;
-      border-right: 2px solid $color-white;
-      transform: rotate(45deg);
-    }
   }
 }
 
