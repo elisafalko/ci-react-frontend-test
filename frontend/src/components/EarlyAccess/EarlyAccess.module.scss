@@ -2,7 +2,8 @@
 
 .early_access {
   padding: 80px 0;
-  background: $color-bg-lilac-primary;
+  background: url("@/assets/icons/earlyAccessBg.svg") center / contain no-repeat,
+    $color-bg-lilac-primary;
 
   &__cards {
     gap: 10px;
@@ -11,23 +12,11 @@
 
   &__text {
     max-width: 92%;
-    position: relative;
     line-height: 28px;
     margin: 32px 0 40px;
     color: $color-white;
     font-size: $font-size-md;
     font-family: $font-gotham;
     font-weight: $font-weight-regular;
-
-    &::before {
-      z-index: 1;
-      content: "";
-      inset: -60px;
-      opacity: 0.5;
-      position: absolute;
-      filter: blur(235px);
-      pointer-events: none;
-      background: $color-azalea-shadow;
-    }
   }
 }

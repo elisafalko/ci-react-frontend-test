@@ -1,0 +1,52 @@
+@use "@/styles/variables" as *;
+
+.ironPdf {
+  font-family: $font-gotham;
+
+  &__advantages {
+    color: $color-white;
+    text-align: center;
+    padding: 94px 0 50px;
+    background: url("@/assets/icons/ironPdfBlur2.svg") left bottom / contain
+        no-repeat,
+      $color-bg-lilac-primary;
+  }
+
+  &__badgeWrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__badge {
+    pointer-events: none;
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: -82px;
+    top: -51px;
+  }
+
+  &__list {
+    gap: 53px;
+    padding: 0;
+    display: flex;
+    margin: 50px 0 0;
+    list-style-type: none;
+    justify-content: space-between;
+  }
+
+  &__text {
+    line-height: 28px;
+    padding: 55px 0 57px;
+    color: $color-white;
+    font-size: $font-size-md;
+    font-weight: $font-weight-regular;
+    background: $color-violet-medium;
+  }
+
+  &__pretext {
+    font-weight: 500;
+    line-height: 28px;
+    font-size: $font-size-md;
+  }
+}

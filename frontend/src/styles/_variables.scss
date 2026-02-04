@@ -2,6 +2,7 @@
 
 // colors
 $color-white: #ffffff;
+$color-transparent: transparent;
 $color-black: rgba(24, 24, 24, 1);
 $color-lilac-lightest: rgb(198, 176, 198);
 $color-lilac-light: rgba(198, 170, 198);
@@ -13,24 +14,22 @@ $color-violet: rgba(51, 20, 51, 1);
 $color-bg-dark: rgb(38, 12, 36);
 $color-bg-azalea: rgba(224, 26, 89, 1);
 $color-bg-violet: rgba(23, 6, 23, 0.8);
+$color-violet-medium: rgba(48, 12, 41);
 $color-bg-lilac-primary: rgba(44, 15, 41, 1);
 $color-bg-lilac-medium: rgba(64, 38, 64);
 $color-bg-lilac-dark: rgba(23, 6, 23, 1);
-$color-bg-lilac-linear-gradient: linear-gradient(
-  90deg,
-  #8e608e 28.16%,
-  #402640 67.82%,
-  #371a34 83.75%
-);
+$color-bg-lilac-linear-gradient: linear-gradient(90deg,
+    #8e608e 28.16%,
+    #402640 67.82%,
+    #371a34 83.75%);
 
 // shadows, borders, dividers
+$color-box-shadow: rgba(224, 26, 89, 0.2);
 $color-light-border: 3px solid rgba(231, 238, 240, 1);
 $color-lilac-divider: rgba(64, 38, 64, 1);
-$color-azalea-shadow: linear-gradient(
-  144.39deg,
-  #e01a59 -32.66%,
-  #460a48 71.03%
-);
+$color-azalea-shadow: linear-gradient(144.39deg,
+    #e01a59 -32.66%,
+    #460a48 71.03%);
 
 // fonts
 $font-ui: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",

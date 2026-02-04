@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 import Layout from "@/components/Layout/Layout";
 import Hero from "@/components/Hero/Hero";
-// import IronPdf from "./components/IronPdf/IronPdf";
+import IronPdf from "@/components/IronPdf/IronPdf";
 import WhyChoose from "@/components/WhyChoose/WhyChoose";
-import EarlyAccess from "./components/EarlyAccess/EarlyAccess";
+import EarlyAccess from "@/components/EarlyAccess/EarlyAccess";
 
 export default function App() {
   const [items, setItems] = useState([]);
@@ -35,7 +35,7 @@ export default function App() {
   return (
     <Layout>
       <Hero />
-      {/* <IronPdf /> */}
+      <IronPdf />
       <WhyChoose />
       <EarlyAccess />
       <div className="container py-4">
