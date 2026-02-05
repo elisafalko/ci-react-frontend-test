@@ -1,4 +1,5 @@
 @use "@/styles/variables" as *;
+@use "@/styles/breakpoints" as *;
 
 .whychoose {
   background: $color-bg-lilac-medium;
@@ -6,10 +7,20 @@
   &__container {
     gap: 52px;
     display: flex;
-    padding: 30px 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
     color: $color-white;
     align-items: center;
     justify-content: flex-start;
+  }
+
+  &__heading,
+  &__description {
+    margin-bottom: 22px;
+  }
+
+  &__description:last-child {
+    margin-bottom: 0;
   }
 
   &__image {
@@ -21,6 +32,25 @@
       width: auto;
       height: auto;
       display: block;
+    }
+  }
+}
+
+@media (max-width: $bp-md) {
+  .whychoose {
+    &__container {
+      gap: 5px;
+      padding-top: 0;
+      padding-bottom: 40px;
+      flex-direction: column;
+    }
+
+    &__image {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
     }
   }
 }

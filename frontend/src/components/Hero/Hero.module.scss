@@ -1,4 +1,5 @@
 @use "@/styles/variables" as *;
+@use "@/styles/breakpoints" as *;
 
 .hero {
   z-index: 0;
@@ -41,10 +42,11 @@
     font-family: $font-gotham;
     font-size: $font-size-sm;
     line-height: 28px;
-    margin-top: 2px;
+    margin: 2px 0 0;
   }
 
   &__pretext {
+    margin: 0;
     font-weight: 500;
     line-height: 28px;
     color: $color-white;
@@ -62,5 +64,15 @@
   &__feedback {
     padding: 50px 0 56px;
     background: $color-bg-lilac-linear-gradient;
+  }
+}
+
+@media (max-width: $bp-lg) {
+  .hero {
+
+    &__description,
+    &__feedback {
+      padding: 36px 0;
+    }
   }
 }

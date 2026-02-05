@@ -23,7 +23,7 @@ export default function IronPdf() {
       </div>
       <div className={styles.ironPdf__text}>
         <div className="wrapper">
-          <p>
+          <p className={styles.ironPdf__infoText}>
             The new{" "}
             <span className={styles.ironPdf__pretext}>
               IronPDF library for C++
@@ -33,7 +33,7 @@ export default function IronPdf() {
             PDFs from HTML content (from text or from URL), as well as to
             combine, split, extract, and modify content from existing PDFs.
           </p>
-          <p>
+          <p className={styles.ironPdf__infoText}>
             <span className={styles.ironPdf__pretext}>IronPDF for C++</span>{" "}
             will help developers create C++ applications that can do all of
             these PDF processing tasks and more, with speed, precision, control,
