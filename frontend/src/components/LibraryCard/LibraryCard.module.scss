@@ -12,8 +12,8 @@
   border-radius: 122px;
   font-family: $font-gotham;
   background: $color-bg-violet;
-  border: 3px solid $color-bg-violet;
-  transition: border 0.3s ease-in-out;
+  border: 3px solid $color-transparent;
+  transition: border 0.2s ease-in-out;
 
   &:hover {
     border: 3px solid $color-lilac-dark;
@@ -37,5 +37,11 @@
 @media (max-width: $bp-lg) {
   .card {
     justify-content: space-between;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .card {
+    gap: 16px;
   }
 }

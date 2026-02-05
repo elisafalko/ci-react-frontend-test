@@ -15,9 +15,9 @@ export default function IronPdf() {
             />
           </div>
           <ul className={styles.ironPdf__list}>
-            <li className={styles.ironPdf__item}># Generate PDFs from HTML in C++</li>
-            <li className={styles.ironPdf__item}># Combine, split, and modify PDFs quickly in C++</li>
-            <li className={styles.ironPdf__item}># Extract text and images from PDFs using C++</li>
+            <li className={styles.ironPdf__item}><b>#</b> Generate PDFs from HTML in C++</li>
+            <li className={styles.ironPdf__item}><b>#</b> Combine, split, and modify PDFs quickly in C++</li>
+            <li className={styles.ironPdf__item}><b>#</b> Extract text and images from PDFs using C++</li>
           </ul>
         </div>
       </div>

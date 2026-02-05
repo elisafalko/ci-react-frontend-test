@@ -17,9 +17,9 @@ export default function EarlyAccess() {
           features and improve on existing features.
         </p>
         <div className={styles.earlyAccess__cards}>
-          <LibraryCard tech="Java" />
-          <LibraryCard tech="Python" />
-          <LibraryCard tech="NodeJS" />
+          <LibraryCard tech="Java" label="Released" text="Released" />
+          <LibraryCard tech="Python" label="coming-soon-v2" text="Coming soon" />
+          <LibraryCard tech="NodeJS" label="coming-soon-v2" text="Coming soon" />
         </div>
       </div>
     </div>

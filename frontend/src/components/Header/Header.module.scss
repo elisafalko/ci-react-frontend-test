@@ -39,3 +39,17 @@
     padding: 14px 16px 0;
   }
 }
+
+@media (max-width: $bp-sm) {
+  .header {
+    font-size: $font-size-2xs;
+
+    &__link {
+      margin-left: 10px;
+    }
+
+    &__nav {
+      margin-left: 18px;
+    }
+  }
+}

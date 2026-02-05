@@ -1,24 +1,42 @@
 @use "@/styles/variables" as *;
+@use "@/styles/breakpoints" as *;
 
 h1 {
   line-height: 54px;
-  letter-spacing: 0px;
   font-size: $font-size-3xl;
 }
 
 h2 {
   line-height: 44px;
-  letter-spacing: 0px;
   font-size: $font-size-2xl;
 }
 
 h1,
 h2 {
+  letter-spacing: 0px;
   color: $color-white;
   font-weight: $font-weight-bold;
   font-family: $font-gotham-bold;
 
   span {
     color: $color-lilac-light;
+  }
+}
+
+@media (max-width: $bp-sm) {
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  h1 {
+    line-height: 44px;
+    font-size: $font-size-2xl;
+  }
+
+  h2 {
+    line-height: 34px;
+    font-size: $font-size-ultra-xl;
   }
 }

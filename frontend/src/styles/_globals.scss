@@ -105,3 +105,9 @@ a {
     animation: logo-spin infinite 20s linear;
   }
 }
+
+@media (max-width: $bp-sm) {
+  .dropdown__trigger {
+    font-size: $font-size-2xs;
+  }
+}
