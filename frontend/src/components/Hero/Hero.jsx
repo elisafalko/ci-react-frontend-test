@@ -1,33 +1,42 @@
+import { useApi } from "@/hooks/useApi";
 import styles from "./Hero.module.scss";
 import { heroLogo } from "@/assets";
 import Badge from "../Badge/Badge";
 import SignupForm from "../SignupForm/SignupForm";
 
 export default function Hero() {
+  const { data, loading, error } = useApi("/api/hero");
+
+  if (error) return null;
+
+  if (loading || !data) {
+    return null;
+  }
+
   return (
     <section className={styles.hero}>
       <div className={styles.hero__container}>
         <div className={styles.hero__description}>
           <div className="wrapper">
             <div className={styles.hero__logo}>
-              <img src={heroLogo} alt="" />
+              <img src={heroLogo} alt={data.image_text} />
             </div>
             <p className={styles.hero__subtitle}>
-              Building on the success of IronPDF for .NET
+              {data.subtitle_text}
             </p>
             <h1>
-              Beta Software Program
+              {data.title}
               <br />
-              <span>IronPDF for C++</span>
+              <span>{data.title_pretext}</span>
             </h1>
-            <p className={styles.hero__text}>Coming soon</p>
+            <p className={styles.hero__text}>{data.text_01}</p>
           </div>
         </div>
         <div className={styles.hero__feedback}>
           <div className="wrapper">
-            <h2>Be one of the first</h2>
+            <h2>{data.heading}</h2>
             <p className={styles.hero__subtitle}>
-              Sign up NOW to get early access!
+              {data.text_02}
             </p>
             <SignupForm
               onSubmit={() => {
@@ -35,10 +44,9 @@ export default function Hero() {
               }}
             />
             <div className={styles.hero__upcoming}>
-              <Badge text="Coming soon" label="coming-soon" />
+              <Badge text={data.text_01} label="coming-soon" />
               <p className={styles.hero__pretext}>
-                IronPDF Beta Program also coming soon for <b>Python</b> |{" "}
-                <b>Node.JS</b> | <b>Java</b>
+                {`${data.text_03} `} <b>{data.text_04}</b> |{" "} <b>{data.text_05}</b> | <b>{data.text_06}</b>
               </p>
             </div>
           </div>

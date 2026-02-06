@@ -1,27 +1,32 @@
+import { useApi } from "@/hooks/useApi";
 import styles from "./WhyChoose.module.scss";
 import { whyChooseLabel } from "@/assets";
 
 export default function WhyChoose() {
+  const { data, loading, error } = useApi("/api/why-choose");
+
+  if (error) return null;
+
+  if (loading || !data) {
+    return null;
+  }
+
   return (
     <section className={styles.whychoose}>
       <div className={`${styles.whychoose__container} wrapper`}>
         <div className={styles.whychoose__image}>
-          <img src={whyChooseLabel} alt="" />
+          <img src={whyChooseLabel} alt={data.image_text} />
         </div>
         <div className={styles.whychoose__area}>
           <h2 className={styles.whychoose__heading}>
-            Why make a <span>C++ PDF Library</span>
+            {`${data.title} `}
+            <span>{data.title_pretext}</span>
           </h2>
           <p className={styles.whychoose__description}>
-            C++ is one of the most popular, oldest, and important programming
-            languages in use, being the language of choice in low-level systems
-            and network programming and other domains where performance is
-            critical.
+            {data.description_first}
           </p>
           <p className={styles.whychoose__description}>
-            The release of IronPDF for C++ will aid developers in building
-            performant applications that can carry out PDF-related processing
-            tasks
+            {data.description_second}
           </p>
         </div>
       </div>

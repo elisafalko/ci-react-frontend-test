@@ -1,0 +1,22 @@
+{
+    "header_logo": "Iron Software",
+    "footer_text": "Sign up to our",
+    "footer_pretext": "Beta Program",
+    "link_text_01": "Products",
+    "link_text_02": "About us",
+    "link_text_03": "Career",
+    "links": [
+        {
+            "id": 31,
+            "text": "IronPDF"
+        },
+        {
+            "id": 32,
+            "text": "IronOCR"
+        },
+        {
+            "id": 33,
+            "text": "IronXL"
+        }
+    ]
+}

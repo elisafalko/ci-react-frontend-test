@@ -1,0 +1,25 @@
+{
+    "title": "Early Access to",
+    "title_pretext": "C++ PDF Library",
+    "description": "Joining the early access program will allow you to collaborate closely with our engineering team. You will be playing a key role in the development process as you share your early experiences using the C++ PDF library before its official launch. Your continual feedback after we release the library will be immensely helpful as we release new features and improve on existing features.",
+    "libraries": [
+        {
+            "id": 11,
+            "tech": "Java",
+            "label": "released",
+            "text": "Released"
+        },
+        {
+            "id": 12,
+            "tech": "Python",
+            "label": "coming-soon-v2",
+            "text": "Coming soon"
+        },
+        {
+            "id": 13,
+            "tech": "NodeJS",
+            "label": "coming-soon-v2",
+            "text": "Coming soon"
+        }
+    ]
+}

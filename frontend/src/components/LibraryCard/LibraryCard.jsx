@@ -7,7 +7,7 @@ export default function LibraryCard({ tech, label, text }) {
     <div className={styles.card}>
       <Badge label={label} text={text} />
       <div className={styles.card__description}>
-        <img className={styles.card__img} src={ironPdfImg} alt="" />
+        <img className={styles.card__img} src={ironPdfImg} alt="Coming soon" />
         <p className={styles.card__pretext}>for {tech}</p>
       </div>
     </div>

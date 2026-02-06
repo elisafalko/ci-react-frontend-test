@@ -10,23 +10,40 @@ class Api extends BaseController
 
     public function items()
     {
-        $data = [
-            [
-                'id'    => 1,
-                'title' => 'First item',
-                'body'  => 'This data comes from CodeIgniter JSON endpoint.'
-            ],
-            [
-                'id'    => 2,
-                'title' => 'Second item',
-                'body'  => 'React will consume this API later.'
-            ],
-            [
-                'id'    => 3,
-                'title' => 'Third item',
-                'body'  => 'Clean separation between backend and frontend.'
-            ],
-        ];
+        $jsonPath = APPPATH . 'Data/items.json';
+        $data = json_decode(file_get_contents($jsonPath), true);
+
+        return $this->respond($data);
+    }
+
+    public function earlyAccess()
+    {
+        $path = APPPATH . 'Data/early_access.json';
+        $data = json_decode(file_get_contents($path), true);
+
+        return $this->respond($data);
+    }
+
+    public function whyChoose()
+    {
+        $path = APPPATH . 'Data/why_choose.json';
+        $data = json_decode(file_get_contents($path), true);
+
+        return $this->respond($data);
+    }
+
+    public function ironPdf()
+    {
+        $path = APPPATH . 'Data/iron_pdf.json';
+        $data = json_decode(file_get_contents($path), true);
+
+        return $this->respond($data);
+    }
+
+    public function hero()
+    {
+        $path = APPPATH . 'Data/hero.json';
+        $data = json_decode(file_get_contents($path), true);
 
         return $this->respond($data);
     }
