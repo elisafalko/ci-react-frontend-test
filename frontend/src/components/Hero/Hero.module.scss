@@ -50,6 +50,7 @@
     font-weight: 500;
     line-height: 28px;
     color: $color-white;
+    line-height: inherit;
     font-family: $font-gotham;
     font-size: $font-size-md;
   }
@@ -65,14 +66,30 @@
     padding: 50px 0 56px;
     background: $color-bg-lilac-linear-gradient;
   }
-}
 
-@media (max-width: $bp-lg) {
-  .hero {
+  @media (max-width: $bp-lg) {
 
     &__description,
     &__feedback {
-      padding: 36px 0;
+      padding: 40px 0;
+    }
+  }
+
+  @media (max-width: $bp-sm) {
+    &__container {
+      text-align: center;
+    }
+
+    &__logo {
+      margin: 0 auto 24px;
+    }
+
+    &__subtitle {
+      font-size: $font-size-sm;
+    }
+
+    &__upcoming {
+      justify-content: center;
     }
   }
 }
