@@ -9,9 +9,14 @@
   justify-content: center;
   background-color: $color-bg-dark;
 
+  &__center {
+    display: flex;
+    justify-content: center;
+  }
+
   &__heading {
     color: $color-white;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   &__text {

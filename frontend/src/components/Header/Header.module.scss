@@ -8,11 +8,11 @@
   position: relative;
   align-items: center;
   padding: 14px 14px 0;
+  font-family: $font-gotham;
   justify-content: flex-start;
-  background: $color-bg-lilac-primary;
-  font-family: $font-gotham-bold;
+  font-size: $font-size-xs-custom;
   font-weight: $font-weight-medium;
-  font-size: $font-size-xs;
+  background: $color-bg-lilac-primary;
 
   &__nav {
     display: flex;

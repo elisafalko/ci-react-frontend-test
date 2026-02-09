@@ -29,7 +29,7 @@ export default function IronPdf() {
                 key={item.id}
                 className={styles.ironPdf__item}
               >
-                <b>#</b>{` ${item.description}`}
+                <span className={styles.ironPdf__bold}>#</span>{` ${item.description}`}
               </li>
             ))}
           </ul>

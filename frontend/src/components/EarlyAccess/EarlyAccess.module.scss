@@ -13,10 +13,11 @@
   &__text {
     max-width: 92%;
     line-height: 28px;
+    line-height: 28px;
     margin: 32px 0 40px;
     color: $color-white;
     font-size: $font-size-md;
-    font-family: $font-gotham;
+    font-family: $font-gotham-thin;
     font-weight: $font-weight-regular;
   }
 }

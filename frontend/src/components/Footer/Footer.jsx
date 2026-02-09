@@ -17,7 +17,9 @@ export default function Footer() {
         <h2 className={styles.footer__heading}>
           {`${data.footer_text} `} <span className={styles.footer__text}>{data.footer_pretext}</span>
         </h2>
-        <SignupForm onSubmit={() => console.log("Footer")} />
+        <div className={styles.footer__center}>
+          <SignupForm onSubmit={() => console.log("Footer")} />
+        </div>
       </div>
     </footer>
   );

@@ -223,4 +223,5 @@ docker compose down
 ## Author
 
 Frontend test task implementation.
+Elizaveta Falko.
 

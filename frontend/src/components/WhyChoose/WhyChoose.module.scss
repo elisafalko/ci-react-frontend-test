@@ -2,6 +2,7 @@
 @use "@/styles/breakpoints" as *;
 
 .whychoose {
+  font-family: $font-gotham-thin;
   background: $color-bg-lilac-medium;
 
   &__container {
@@ -17,6 +18,10 @@
   &__heading,
   &__description {
     margin-bottom: 22px;
+  }
+
+  &__description {
+    line-height: 28px;
   }
 
   &__description:last-child {

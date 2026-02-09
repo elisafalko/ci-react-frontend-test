@@ -2,7 +2,12 @@
 @use "@/styles/breakpoints" as *;
 
 .ironPdf {
-  font-family: $font-gotham;
+  font-family: $font-gotham-thin;
+
+  &__bold {
+    margin-right: 5px;
+    font-family: $font-gotham-medium;
+  }
 
   &__advantages {
     color: $color-white;
@@ -45,6 +50,7 @@
   }
 
   &__item {
+    font-size: 15px;
     padding-right: 54px;
     background: url("@/assets/icons/ironDivider.svg") right no-repeat;
 
@@ -67,6 +73,7 @@
     font-weight: 700;
     line-height: 28px;
     font-size: $font-size-md;
+    font-family: $font-gotham-medium;
   }
 }
 

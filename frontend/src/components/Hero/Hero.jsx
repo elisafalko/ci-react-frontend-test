@@ -46,12 +46,12 @@ export default function Hero() {
             <div className={styles.hero__upcoming}>
               <Badge text={data.text_01} label="coming-soon" />
               <p className={styles.hero__pretext}>
-                {`${data.text_03} `} <b>{data.text_04}</b> |{" "} <b>{data.text_05}</b> | <b>{data.text_06}</b>
+                {`${data.text_03} `} <span className={styles.hero__bold}>{data.text_04}</span> |{" "} <span className={styles.hero__bold}>{data.text_05}</span> | <span className={styles.hero__bold}>{data.text_06}</span>
               </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 }

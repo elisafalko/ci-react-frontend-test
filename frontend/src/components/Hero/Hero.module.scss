@@ -32,14 +32,14 @@
     color: $color-white;
     margin-bottom: 10px;
     font-size: $font-size-lg;
-    font-family: $font-gotham;
+    font-family: $font-gotham-bold;
     font-weight: $font-weight-medium;
   }
 
   &__text {
     font-weight: $font-weight-regular;
     color: $color-lilac-medium;
-    font-family: $font-gotham;
+    font-family: $font-gotham-thin;
     font-size: $font-size-sm;
     line-height: 28px;
     margin: 2px 0 0;
@@ -51,8 +51,12 @@
     line-height: 28px;
     color: $color-white;
     line-height: inherit;
-    font-family: $font-gotham;
     font-size: $font-size-md;
+    font-family: $font-gotham-thin;
+  }
+
+  &__bold {
+    font-family: $font-gotham-medium;
   }
 
   &__upcoming {
@@ -60,6 +64,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
+    align-items: center;
   }
 
   &__feedback {

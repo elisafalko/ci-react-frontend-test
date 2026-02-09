@@ -36,12 +36,15 @@ $color-azalea-shadow: linear-gradient(144.39deg,
 $font-ui: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, sans-serif;
 $font-gotham: "Gotham", $font-ui;
+$font-gotham-light: "Gotham Light", $font-ui;
+$font-gotham-thin: "Gotham Thin", $font-ui;
 $font-gotham-medium: "Gotham Medium", $font-ui;
 $font-gotham-bold: "Gotham Bold", $font-ui;
 $font-mono: "JetBrains Mono", monospace;
 
 // font-sizes
 $font-size-2xs: 10px;
+$font-size-xs-custom: 11px;
 $font-size-xs: 12px;
 $font-size-sm: 14px;
 $font-size-md: 16px;
