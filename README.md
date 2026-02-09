@@ -1,68 +1,226 @@
-# CodeIgniter 4 Application Starter
+# Frontend Test Task — CodeIgniter + React
 
-## What is CodeIgniter?
+This project demonstrates a simple full-stack setup using **CodeIgniter 4** as a backend and **React (Vite)** as a frontend, following clean architecture principles and best practices.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+The goal of the task is to show:
+- basic routing in CodeIgniter
+- usage of a JSON file as a simulated data source
+- clean separation between backend and frontend
+- organized project structure
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+---
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Tech Stack
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+### Backend
+- PHP 8.2
+- CodeIgniter 4
+- JSON files as a simulated data source
+- Apache (Docker)
 
-## Installation & updates
+### Frontend
+- React (Vite)
+- SCSS Modules
+- Bootstrap (layout utilities)
+- Custom React hooks for data fetching
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+### Infrastructure
+- Docker
+- Docker Compose
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+---
 
-## Setup
+## Project Structure
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+```
+ci-react-frontend-test/
+├── ci/                         # CodeIgniter application
+│   ├── app/
+│   │   ├── Controllers/
+│   │   │   ├── Home.php
+│   │   │   └── Api.php
+│   │   ├── Data/               # Simulated data source (JSON)
+│   │   │   ├── items.json
+│   │   │   └── early_access.json
+│   │   └── Config/
+│   │       └── Routes.php
+│   └── public/
+│       └── assets/
+│           └── frontend/       # React production build
+│
+├── frontend/                   # React application (Vite)
+│   ├── src/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── styles/
+│   │   └── App.jsx
+│   └── vite.config.js
+│
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
+```
 
-## Important Change with index.php
+---
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## Backend Overview
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+### Routing
 
-**Please** read the user guide for a better explanation of how CI4 works!
+Basic routing is implemented in `app/Config/Routes.php`:
 
-## Repository Management
+```php
+$routes->get('/', 'Home::index');
+$routes->get('/api/items', 'Api::items');
+$routes->get('/api/early-access', 'Api::earlyAccess');
+```
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+### Controllers
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+- **HomeController**
+  - Serves the React SPA by returning the compiled `index.html`.
 
-## Server Requirements
+- **ApiController**
+  - Provides JSON endpoints that read data from files in `app/Data`.
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+Example:
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+```php
+public function earlyAccess()
+{
+    $path = APPPATH . 'Data/early_access.json';
+    $data = json_decode(file_get_contents($path), true);
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+    return $this->respond($data);
+}
+```
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+---
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## Data Source
+
+The application uses static JSON files to simulate backend data:
+
+- `app/Data/items.json`
+- `app/Data/early_access.json`
+
+These files represent dynamic content such as lists and blocks and are intentionally separated from views and assets.
+
+---
+
+## Frontend Overview
+
+- React components are responsible for presentation only.
+- Dynamic data is fetched from the backend API.
+- Each section that requires data fetches it independently using a **custom hook**.
+
+### Custom Data Fetching Hook
+
+```js
+export function useApi(url) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(setData)
+      .finally(() => setLoading(false));
+  }, [url]);
+
+  return { data, loading, error };
+}
+```
+
+This approach keeps components clean and avoids duplicating fetch logic.
+
+---
+
+## Styling
+
+- SCSS Modules are used for component-level styling.
+- Shared variables are stored in `src/styles/_variables.scss`.
+- Bootstrap is used selectively for layout and utility classes.
+
+---
+
+## How to Run the Project
+
+### Prerequisites
+
+Make sure you have installed:
+- Docker
+- Docker Compose
+
+---
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd ci-react-frontend-test
+```
+
+---
+
+### 2. Build and start all services
+
+```bash
+docker compose up -d --build
+```
+
+This command will:
+- build the PHP/Apache container with CodeIgniter
+- install frontend dependencies
+- build the React application
+- serve the React production build through CodeIgniter
+
+---
+
+### 3. Access the application
+
+Open in your browser:
+
+```
+http://localhost:8080
+```
+
+---
+
+### 4. Rebuilding frontend only (optional)
+
+If frontend code changes:
+
+```bash
+docker compose run --rm frontend npm run build
+```
+
+The updated build will be placed into:
+
+```
+ci/public/assets/frontend
+```
+
+---
+
+### 5. Stop containers
+
+```bash
+docker compose down
+```
+
+---
+
+## Notes
+
+- React is served as a production build through CodeIgniter.
+- JSON files are not publicly accessible and can only be read through API endpoints.
+- The project intentionally avoids overengineering and focuses on clarity and separation of concerns.
+
+---
+
+## Author
+
+Frontend test task implementation.
+Elizaveta Falko.
