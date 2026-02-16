@@ -212,6 +212,32 @@ docker compose down
 
 ---
 
+### 6. Backend Setup
+
+Before running the application, install PHP dependencies.
+Navigate to the ci directory and run:
+
+```bash
+cd ci
+composer install
+```
+
+This will generate the required vendor/ directory.
+
+Run with Docker:
+
+```bash
+docker compose up --build
+```
+
+The application will be available at:
+
+```
+http://localhost:8080
+```
+
+---
+
 ## Notes
 
 - React is served as a production build through CodeIgniter.
