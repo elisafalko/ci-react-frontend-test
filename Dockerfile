@@ -18,19 +18,20 @@ RUN curl -sS https://getcomposer.org/installer \
 
 COPY . .
 
-# backend deps
+# install backend deps
 WORKDIR /app/ci
 RUN composer install --no-interaction --no-dev --optimize-autoloader
 
 RUN mkdir -p /app/ci/writable && chmod -R 777 /app/ci/writable
 
-# build react
+# build frontend (как в docker-compose)
 WORKDIR /app/frontend
 RUN npm install
 RUN npm run build
 
-# copy react build to public
-RUN cp -r build/* /app/ci/public/
+# копируем билд туда же куда volume писал
+RUN mkdir -p /app/ci/public/assets
+RUN cp -r dist/* /app/ci/public/assets/ || cp -r build/* /app/ci/public/assets/
 
 EXPOSE 8080
 
