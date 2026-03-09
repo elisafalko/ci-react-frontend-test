@@ -12,12 +12,14 @@ RUN apt-get update && apt-get install -y \
 
 # install composer
 RUN curl -sS https://getcomposer.org/installer \
-    | php -- --install-dir=/usr/local/bin --filename=composer
+ | php -- --install-dir=/usr/local/bin --filename=composer
 
 COPY . .
 
+# install CI dependencies
+WORKDIR /app/ci
 RUN composer install --no-interaction --no-dev --optimize-autoloader
 
 EXPOSE 8080
 
-CMD php -S 0.0.0.0:8080 -t ci/public
+CMD php -S 0.0.0.0:8080 -t /app/ci/public
