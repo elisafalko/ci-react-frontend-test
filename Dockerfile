@@ -10,15 +10,15 @@ RUN apt-get update && apt-get install -y \
     curl \
     && docker-php-ext-install zip intl
 
-# install composer
 RUN curl -sS https://getcomposer.org/installer \
  | php -- --install-dir=/usr/local/bin --filename=composer
 
 COPY . .
 
-# install CI dependencies
 WORKDIR /app/ci
 RUN composer install --no-interaction --no-dev --optimize-autoloader
+
+RUN chmod -R 777 /app/ci/writable
 
 EXPOSE 8080
 
