@@ -17,8 +17,7 @@ RUN curl -sS https://getcomposer.org/installer \
 RUN a2enmod rewrite
 
 # Fix Apache MPM conflict
-RUN a2dismod mpm_event
-RUN a2enmod mpm_prefork
+RUN a2dismod mpm_event || true
 
 # Set working directory
 WORKDIR /var/www/html/ci
@@ -38,6 +37,8 @@ RUN sed -i 's/:80/:${PORT}/g' /etc/apache2/sites-available/000-default.conf
 
 EXPOSE 8080
 
+COPY . /var/www/html
+
 # Install dependencies on container start
-# CMD composer install && apache2-foreground
-CMD apache2-foreground
+CMD composer install && apache2-foreground
+# CMD apache2-foreground
