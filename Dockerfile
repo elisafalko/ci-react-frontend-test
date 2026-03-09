@@ -18,7 +18,7 @@ COPY . .
 WORKDIR /app/ci
 RUN composer install --no-interaction --no-dev --optimize-autoloader
 
-RUN chmod -R 777 /app/ci/writable
+RUN mkdir -p /app/ci/writable && chmod -R 777 /app/ci/writable
 
 EXPOSE 8080
 
