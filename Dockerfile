@@ -16,6 +16,10 @@ RUN curl -sS https://getcomposer.org/installer \
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
+# Fix Apache MPM conflict
+RUN a2dismod mpm_event
+RUN a2enmod mpm_prefork
+
 # Set working directory
 WORKDIR /var/www/html/ci
 
@@ -32,7 +36,6 @@ RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/ports.conf
 RUN sed -i 's/:80/:${PORT}/g' /etc/apache2/sites-available/000-default.conf
 
-ENV PORT=8080
 EXPOSE 8080
 
 # Install dependencies on container start
