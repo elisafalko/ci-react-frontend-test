@@ -23,7 +23,8 @@ WORKDIR /app/ci
 RUN composer install --no-interaction --no-dev --optimize-autoloader
 
 # RUN mkdir -p /app/ci/writable && chmod -R 777 /app/ci/writable
-RUN mkdir -p writable && chmod -R 777 writable
+RUN mkdir -p writable/cache writable/logs writable/session writable/uploads \
+ && chmod -R 777 writable
 
 # копируем билд туда же куда volume писал
 RUN mkdir -p /app/ci/public/assets
