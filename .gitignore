@@ -20,8 +20,8 @@ ci/writable/*
 
 writable/
 
-ci/public/assets/*
-!ci/public/assets/.gitkeep
+# ci/public/assets/*
+# !ci/public/assets/.gitkeep
 
 # --------------------
 # Vendor
