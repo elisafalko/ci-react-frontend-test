@@ -18,8 +18,8 @@ class App extends BaseConfig
      */
     // public string $baseURL = 'http://localhost:8080/';
     // public string $baseURL = 'http://example.com/';
-    
-    public string $baseURL = 'https://';
+
+    public string $baseURL = 'https://ci-react-frontend-test-production.up.railway.app/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
